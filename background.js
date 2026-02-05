@@ -17,6 +17,24 @@ const AD_RULES = [
             "urlFilter": "*finallygotthexds.site*",
             "resourceTypes": ["xmlhttprequest", "media", "other"]
         }
+    },
+    {
+        "id": 3,
+        "priority": 1,
+        "action": { "type": "block" },
+        "condition": {
+            "urlFilter": "streamc.xyz/1.mp4",
+            "resourceTypes": ["media", "xmlhttprequest"]
+        }
+    },
+    {
+        "id": 4,
+        "priority": 1,
+        "action": { "type": "block" },
+        "condition": {
+            "urlFilter": "raw.githubusercontent.com/hiller1233456/milo543*",
+            "resourceTypes": ["xmlhttprequest"]
+        }
     }
 ];
 

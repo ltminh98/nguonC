@@ -5,21 +5,21 @@ const urlDisplay = document.getElementById('urlDisplay');
 
 captureBtn.addEventListener('click', () => {
     chrome.storage.local.set({ isCapturing: true });
-    statusText.innerText = "Status: Chờ tý... Tải lại trang thử xem!.";
-    captureBtn.innerText = "Chưa thấy gì...";
+    statusText.innerText = "Status: Found nothing";
+    captureBtn.innerText = "Updating...";
 });
 
 chrome.runtime.onMessage.addListener((message) => {
     if (message.type === "URL_FOUND") {
         const url = message.url;
-        statusText.innerText = "Trạng thái: Đã tìm thấy link!";
+        statusText.innerText = "Status: Found!!";
         resultArea.classList.remove('hidden');
         urlDisplay.innerText = url;
 
         // Button: Copy Raw URL
         document.getElementById('copyUrlBtn').onclick = () => {
             navigator.clipboard.writeText(url);
-            alert("URL đã copy!");
+            alert("URL copied!");
         };
 
         // Button: Copy IINA Terminal Command (Pre-formatted)

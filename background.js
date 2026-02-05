@@ -36,7 +36,7 @@ chrome.webRequest.onBeforeRequest.addListener(
 
                 // --- AD EXCLUSION LOGIC ---
                 const isAd = details.url.includes("pmolink") ||
-                    details.url.includes("finallygotthexds.site");
+                    details.url.includes("streamc.xyz/1.mp4");
 
                 if (isAd) {
                     console.log("Filtered out ad stream:", details.url);

@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener((message) => {
 
         // Button: Copy IINA Terminal Command (Pre-formatted)
         document.getElementById('copyIinaBtn').onclick = () => {
-            const iinaCmd = `/Applications/IINA.app/Contents/MacOS/iina-cli --mpv-http-header-fields="Referer: https://goatembed.com/,Origin: https://goatembed.com/,User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" "${url}"`;
+            const iinaCmd = `/Applications/IINA.app/Contents/MacOS/iina-cli --mpv-http-header-fields="Referer: ${url},User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" "${url}"`;
             navigator.clipboard.writeText(iinaCmd);
             alert("Đã copy IINA. Dán vào terminal để xem phim trên đó.");
         };
